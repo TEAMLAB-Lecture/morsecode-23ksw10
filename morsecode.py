@@ -289,7 +289,8 @@ def encoding_sentence(english_sentence):
     word = english_sentence.split()
     for w in word:
         for c in w:
-            result += encoding_character(c) + ' '
+            result += encoding_character(c) 
+            result += ' '
         result += ' '
 
     return result.strip()

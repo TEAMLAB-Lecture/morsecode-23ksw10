@@ -131,7 +131,7 @@ def is_validated_morse_code(user_input):
     alp = user_input.split()
     morse_code = get_morse_code_dict()
     for a in alp :
-        if a in morse_code.values() == False :
+        if a not in morse_code.values() :
             return False
 
     return True

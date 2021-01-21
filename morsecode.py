@@ -286,8 +286,8 @@ def encoding_sentence(english_sentence):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
     
     result = ""
-    encoding_sentence = get_cleaned_english_sentence(english_sentence)
-    word = english_sentence.split()
+    change_sentencee = get_cleaned_english_sentence(english_sentence)
+    word = change_sentencee.split()
     for w in word:
         for c in w:
             result += encoding_character(c) 

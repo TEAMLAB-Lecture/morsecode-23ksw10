@@ -88,10 +88,10 @@ def is_validated_english_sentence(user_input):
     for c in user_input:
         if c.isdigit() == True :
             return False
-    tmp = re.sub('[-=+,#/\?:^$.@*\"※~&%ㆍ!』\\‘|\(\)\[\]\<\>`\'…》]','',user_input )
+    tmp = re.sub('[-=+#/\:^$@*"※~&%ㆍ』‘|\(\)\[\]\<\>`''》]','',user_input )
     if tmp != user_input : 
         return False
-    tmp = re.sub('.,!?','',tmp)
+    tmp = re.sub('[.,!?]','',tmp)
     if tmp == '' or tmp.split() == [] :
         return False
 
@@ -159,7 +159,7 @@ def get_cleaned_english_sentence(raw_english_sentence):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
     import re
-    result = re.sub('.,!?','',raw_english_sentence)
+    result = re.sub('[.,!?]','',raw_english_sentence)
     result = result.strip()
 
     return result
@@ -307,7 +307,7 @@ def main():
         elif is_help_command(user_input) == True :
             print(get_help_message())
         elif is_validated_english_sentence(user_input) == True:
-            print(encoding_sentence(user_input))
+            print(encoding_sentence(get_cleaned_english_sentence(user_input)))
         elif is_validated_morse_code(user_input) == True :
             print(decoding_sentence(user_input))
         else :

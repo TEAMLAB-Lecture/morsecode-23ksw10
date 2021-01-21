@@ -88,7 +88,7 @@ def is_validated_english_sentence(user_input):
     for c in user_input:
         if c.isdigit() == True :
             return False
-    tmp = re.sub('[-=+#/\:^$@*"※~&%ㆍ』‘|\(\)\[\]\<\>`''》]','',user_input )
+    tmp = re.sub('[-=+#/\;:^$@*"※~&%ㆍ』‘_|\(\)\[\]\<\>`''》]','',user_input )
     if tmp != user_input : 
         return False
     tmp = re.sub('[.,!?]','',tmp)

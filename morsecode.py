@@ -307,7 +307,8 @@ def main():
         elif is_help_command(user_input) == True :
             print(get_help_message())
         elif is_validated_english_sentence(user_input) == True:
-            print(encoding_sentence(get_cleaned_english_sentence(user_input)))
+            tmp = get_cleaned_english_sentence(user_input))
+            print(encoding_sentence(tmp))
         elif is_validated_morse_code(user_input) == True :
             print(decoding_sentence(user_input))
         else :

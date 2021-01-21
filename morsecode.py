@@ -285,7 +285,7 @@ def encoding_sentence(english_sentence):
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당 또는 필요에 따라 자유로운 수정
     import re
     result = ""
-    encoding_sentence = re.sub('!.,','',english_sentence)
+    encoding_sentence = re.sub('[!.,]','',english_sentence)
     word = english_sentence.split()
     for w in word:
         for c in w:
